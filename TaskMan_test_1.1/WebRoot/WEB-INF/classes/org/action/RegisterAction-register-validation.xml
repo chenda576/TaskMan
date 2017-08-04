@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.3//EN"  
+"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="user.nickName">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>昵称不能为空</message>
+		</field-validator>
+	</field>
+	<field name="user.password">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>密码不能为空</message>
+		</field-validator>
+	</field>
+	<field name="user.mobile">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>手机号不能为空</message>
+		</field-validator>
+	</field>
+</validators>

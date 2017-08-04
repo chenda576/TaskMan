@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple" />
+	<package name="default" extends="struts-default">
+		<action name="login" class="org.action.LoginAction">
+			<result name="success">userPage.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		<action name="register" class="org.action.RegisterAction">
+			<result name="success">login.jsp</result>
+			<result name="input">register.jsp</result>
+			<result name="error">register.jsp</result>
+		</action>
+		<action name="publish" class="org.action.PublishAction">
+			<result name="success">userPage.jsp</result>
+			<result name="error">publish.jsp</result>
+		</action>
+		<action name="searchTask" class="org.action.SearchTaskAction">
+			<result name="success">tasklist.jsp</result>
+			<result name="error">userPage.jsp</result>
+			<result name="input">tasklist.jsp</result>
+		</action>
+		<action name="personTask" class="org.action.PersonTaskAction">
+			<result name="success">tasklist_personal.jsp</result>
+			<result name="error">userPage.jsp</result>
+		</action>
+		<action name="willing" class="org.action.WillingAction">
+			<result name="success" type="redirectAction">searchTask</result>
+			<result name="error">userPage.jsp</result>
+		</action>
+		<action name="unwilling" class="org.action.UnWillingAction">
+			<result name="success" type="redirectAction">searchTask</result>
+			<result name="error">userPage.jsp</result>
+		</action>
+		<action name="wantList" class="org.action.WantListAction">
+			<result name="success">wantlist.jsp</result>
+			<result name="error" type="redirectAction">personTask</result>
+		</action>
+		<action name="choose" class="org.action.ChooseAction">
+			<result name="success" type="redirectAction">personTask</result>
+			<result name="error" type="redirectAction">personTask</result>
+		</action>
+		<action name="proceed" class="org.action.ProceedAction">
+			<result name="success">proceed.jsp</result>
+			<result name="error">userPage.jsp</result>
+		</action>
+		<action name="taskComplete" class="org.action.TaskCompleteAction">
+			<result name="success" type="redirectAction">personTask</result>
+			<result name="error">userPage.jsp</result>
+		</action>
+		<action name="cancelTask" class="org.action.CancelTaskAction">
+			<result name="success" type="redirectAction">personTask</result>
+			<result name="error">userPage.jsp</result>
+		</action>
+		<action name="refund" class="org.action.RefundAction">
+			<result name="success" type="redirectAction">personTask</result>
+			<result name="error">userPage.jsp</result>
+		</action>
+		<action name="cancelRefund" class="org.action.CancelRefundAction">
+			<result name="success" type="redirectAction">personTask</result>
+			<result name="error">userPage.jsp</result>
+		</action>
+		<action name="agreeRefund" class="org.action.AgreeRefundAction">
+			<result name="success" type="redirectAction">proceed</result>
+			<result name="error">userPage.jsp</result>
+		</action>
+		<action name="disagreeRefund" class="org.action.DisagreeRefundAction">
+			<result name="success" type="redirectAction">proceed</result>
+			<result name="error">userPage.jsp</result>
+		</action>
+		<action name="quitTask" class="org.action.QuitATaskAction">
+			<result name="success" type="redirectAction">proceed</result>
+			<result name="error">userPage.jsp</result>
+		</action>
+	</package>
+</struts>
